@@ -1,5 +1,12 @@
 Git Commands
 
+
+$ git config credential.helper store
+$ git push https://github.com/repo.git
+
+Username for 'https://github.com': <USERNAME>
+Password for 'https://USERNAME@github.com': <PASSWORD>
+================================================================
 1. $ git config --list --show-origin : View all setings
 
 To configure username and email:
@@ -36,24 +43,69 @@ To initialise a git repository:
 		-$git clone https://someUrl	
 		-$git clone https://someUrl directoryName
 
+To check the status of files:
+	-$git status
+	-$git status -s : for simplified output
 
+To track a file/add file to git
+	-$git add fileName
 
+To ignore any file in git directory
+	-Create a .gitignore file 
+	-Add this .gitignore file to git using git add .gitignore
+	-Define rules in the .gitignore file
+		#This is a comment
+		#ignore all files ending with .a 0r .o
+		*.[oa]
 
+		#ignore a single file
+		/fileName
 
+		#ignore a directory
+		dirName/	
 
+To view staged and unstaged changes:
+	-git diff : Shows changes which are modified not staged
+	-git diff --staged/git diff --cached : Shows changes which are staged.
 
+Commiting changes to git:
+	$git commit : Launches an editor to enter commit messages.
+	$git commit -v : Shows what changes have been done.
+	$git commit -m "Commit message" : Exp;icitly write comment
+	$git commit -a -m "Skipping git add line" : Performs both staging and commit.
 
+Removing Files 
+	1. Remove file from directory initially
+		$ rm fileName
+	2. Remove file from git tracking(Stages the file removal)
+		$ git rm fileName	
+	3. On the next commit file will be removed from git and no longer tracked.
 
+Viewing Commit History
+	-$git log : Shows commits in reverse chronological order.
+	-$git log -p -5 : Shows difference introduced in last 5 commits
+	-$git log --stat
+	-$git log --pretty=oneline
+	-$git log --pretty=fuller
+	-$git log --pretty=full
+	-$git log --pretty=short
+	-$git log --pretty='%s'/'%ad'/'%ae'/'%H'/'%h'/'%P'/'%p'/'%an'/'%cr'/'%T'/'%t'
+	-$git log --pretty=format"%s %h %ad" : Multiple formats passed
+	-$git log --pretty=full --author='authorName'
+	-$git log --pretty=oneline --since="2020-11-01" --until="2020-12-01"
+	-$git log --since=2.day
+	-$git log --since=2.weeks	
 
+Undoing things in git
+	-$git commit -m 'Initial commit'
+	-$git add forgotten_file
+	-$git commit --amend
 
+Unstaging a Staged File
+	-$git reset HEAD fileName
 
-
-
-
-
-
-
-
+Unmodifying a modified file
+	-$git checkout -- fileName
 
 
 
