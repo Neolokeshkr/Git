@@ -49,7 +49,7 @@ To initialise a git repository:
 		-$git init
 		-$git add .
 		-$git commit -m 'Message'
-	-2. Pushing changes on githuh repo
+	-2. Pushing changes on github repo
 		1. Login to GitHub Account and create a new repository.
 		2. Copy the ssh_link_of_repo.
 		-$git remote add origin 'ssh_link_of_repo'
